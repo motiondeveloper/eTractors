@@ -24,7 +24,7 @@ It comes in the form of a JSON file that's imported into the project, and then r
 - [Contents](#contents)
 - [Compatibility](#compatibility)
 - [Usage](#usage)
-  - [3. Create a new effector](#3-create-a-new-effector)
+  - [4. Use effector properties](#4-use-effector-properties)
 - [Example](#example)
 - [License](#license)
 - [Contact](#contact)
@@ -55,7 +55,7 @@ const aeEffectors = footage('aeEffectors.jsx').sourceData;
 >
 > This will ensure After Effects includes the file when collecting assets or packaging into a Motion Graphics Template.
 
-### 3. Create a new effector
+### 3. Create a new effector <!-- omit in toc -->
 
 This creates a new effector based on an effector layer, and the position of the current layer.
 
@@ -63,7 +63,13 @@ This creates a new effector based on an effector layer, and the position of the 
 const myEffector = aeEffector.createEffector(effectorLayer, particlePosition);
 ```
 
+The `createEffector` function returns an object with a couple of properties you can use to influence the motion of your particle layer.
 
+### 4. Use effector properties
+
+```javascript
+particlePosition + myEffector.attract;
+```
 
 ## Example
 
