@@ -1,5 +1,5 @@
 {
-    'effector': function(effectorLayer, particlePosition) {
+    'createEffector': function(effectorLayer, particlePosition) {
         const getLongestSide = (layer) => {
             const layerRect = layer.sourceRectAtTime(0, false);
             return Math.max(layerRect.width, layerRect.height);
