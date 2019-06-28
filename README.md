@@ -1,10 +1,10 @@
 <!-- Links -->
 
-[back to top ↑]: #eParticles
+[back to top ↑]: #eTractors
 
 <div align="center">
 
-# eParticles <!-- omit in toc -->
+# eTractors <!-- omit in toc -->
 
 System for creating particle effectors in After Effects using expressions
 
@@ -14,7 +14,7 @@ System for creating particle effectors in After Effects using expressions
 
 ## Overview
 
-`eParticles` is a way to create 'effector' layers that can attract and repel other layers when they move within a specified distance.
+`eTractors` is a way to create 'effector' layers that can attract and repel other layers when they move within a specified distance.
 
 It comes in the form of a JSON file that's imported into the project, and then referenced in expressions.
 
@@ -37,9 +37,9 @@ This aeFunctions is compatible with After Effects versions >= 16.0.1 (CC2019) wh
 
 ## Usage
 
-### 1. **Download and import `eParticles.jsx` into your After Effects project** <!-- omit in toc -->
+### 1. **Download and import `eTractors.jsx` into your After Effects project** <!-- omit in toc -->
 
-Download the `eParticles.jsx` file from the master branch of this repository, and import it into your After Effects project.
+Download the `eTractors.jsx` file from the master branch of this repository, and import it into your After Effects project.
 
 ### 2. **Add a reference to the library in your expression** <!-- omit in toc -->
 
@@ -48,10 +48,10 @@ Download the `eParticles.jsx` file from the master branch of this repository, an
 To reference the library in an expression, you need to assign it to a variable. This is done via the line:
 
 ```javascript
-const particles = footage('eParticles.jsx').sourceData;
+const eTractors = footage('eTractors.jsx').sourceData;
 ```
 
-> ⚠️ Since After Effects doesn't count footage items that are only referenced within expressions as used, it's recommended that you also place the `aeEffectors.jsx` file in any compositions where it is referenced.
+> ⚠️ Since After Effects doesn't count footage items that are only referenced within expressions as used, it's recommended that you also place the `eTractors.jsx` file in any compositions where it is referenced.
 >
 > This will ensure After Effects includes the file when collecting assets or packaging into a Motion Graphics Template.
 
@@ -60,7 +60,7 @@ const particles = footage('eParticles.jsx').sourceData;
 This creates a new effector based on an effector layer, and the position of the current layer.
 
 ```javascript
-const myEffector = particles.createEffector(effectorLayer, particlePosition);
+const myEffector = eTractors.createEffector(effectorLayer, particlePosition);
 ```
 
 The `createEffector` function returns an object with a couple of properties you can use to influence the motion of your particle layer.
