@@ -1,10 +1,10 @@
 <!-- Links -->
 
-[back to top ↑]: #aeeffectors
+[back to top ↑]: #eParticles
 
 <div align="center">
 
-# aeEffectors <!-- omit in toc -->
+# eParticles <!-- omit in toc -->
 
 System for creating particle effectors in After Effects using expressions
 
@@ -14,7 +14,7 @@ System for creating particle effectors in After Effects using expressions
 
 ## Overview
 
-`aeEffectors` is a way to create 'effector' layers that can attract and repel other layers when they move within a specified distance.
+`eParticles` is a way to create 'effector' layers that can attract and repel other layers when they move within a specified distance.
 
 It comes in the form of a JSON file that's imported into the project, and then referenced in expressions.
 
@@ -37,9 +37,9 @@ This aeFunctions is compatible with After Effects versions >= 16.0.1 (CC2019) wh
 
 ## Usage
 
-### 1. **Download and import `aeEffectors.jsx` into your After Effects project** <!-- omit in toc -->
+### 1. **Download and import `eParticles.jsx` into your After Effects project** <!-- omit in toc -->
 
-Download the `aeEffectors.jsx` file from the master branch of this repository, and import it into your After Effects project.
+Download the `eParticles.jsx` file from the master branch of this repository, and import it into your After Effects project.
 
 ### 2. **Add a reference to the library in your expression** <!-- omit in toc -->
 
@@ -48,7 +48,7 @@ Download the `aeEffectors.jsx` file from the master branch of this repository, a
 To reference the library in an expression, you need to assign it to a variable. This is done via the line:
 
 ```javascript
-const aeEffectors = footage('aeEffectors.jsx').sourceData;
+const particles = footage('eParticles.jsx').sourceData;
 ```
 
 > ⚠️ Since After Effects doesn't count footage items that are only referenced within expressions as used, it's recommended that you also place the `aeEffectors.jsx` file in any compositions where it is referenced.
@@ -60,7 +60,7 @@ const aeEffectors = footage('aeEffectors.jsx').sourceData;
 This creates a new effector based on an effector layer, and the position of the current layer.
 
 ```javascript
-const myEffector = aeEffector.createEffector(effectorLayer, particlePosition);
+const myEffector = particles.createEffector(effectorLayer, particlePosition);
 ```
 
 The `createEffector` function returns an object with a couple of properties you can use to influence the motion of your particle layer.
@@ -70,38 +70,6 @@ The `createEffector` function returns an object with a couple of properties you 
 ```javascript
 particlePosition + myEffector.attract;
 ```
-
-## Example
-
-An example setup of an animation group with a couple of keyframes:
-
-```javascript
-// Import eKeys library
-const eKeys = footage('eKeys.jsx').sourceData;
-
-// Create an array of keyframes
-const inKeys = [
-  {
-    keyTime: 1,
-    keyValue: 0,
-    easeIn: 0,
-    easeOut: 66,
-  },{
-    keyTime: 2,
-    keyValue: 250,
-    easeIn: 90,
-    easeOut: 0,
-  }
-];
-
-// Create new animation group
-const animIn = eKeys.AnimGroup(inKeys);
-
-// Animate animation group
-animIn(time);
-```
-
-[Back To Top ↑]
 
 ## License
 
