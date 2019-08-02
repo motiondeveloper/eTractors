@@ -65,10 +65,14 @@ const myEffector = eTractors.createEffector(effectorLayer, particlePosition);
 
 The `createEffector` function returns an object with a couple of properties you can use to influence the motion of your particle layer.
 
-### 4. Use effector properties
+### 4. Use effector properties <!-- omit in toc -->
 
 ```javascript
+// Move towards attractor
 particlePosition + myEffector.attract;
+
+// Move away from attractor
+particlePosition + myEffector.repel;
 ```
 
 ## License
