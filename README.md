@@ -23,9 +23,8 @@ It comes in the form of a JSON file that's imported into the project, and then r
 - [Overview](#overview)
 - [Contents](#contents)
 - [Compatibility](#compatibility)
-- [Usage](#usage)
-  - [4. Use effector properties](#4-use-effector-properties)
 - [Example](#example)
+- [Usage](#usage)
 - [License](#license)
 - [Contact](#contact)
 
@@ -34,6 +33,21 @@ It comes in the form of a JSON file that's imported into the project, and then r
 This aeFunctions is compatible with After Effects versions >= 16.0.1 (CC2019) which use the new [Javascript engine](https://helpx.adobe.com/after-effects/using/expression-language-reference.html).
 
 [Back To Top ↑]
+
+## Example
+
+Example layer attraction setup using eTractors:
+
+```javascript
+// Import the library
+const eTractors = footage('eTractors.jsx').sourceData;
+
+// Create a new effector
+const myEffector = eTractors.createEffector(effectorLayer, particlePosition);
+
+// Move towards the effector layer
+particlePosition + myEffector.attract;
+```
 
 ## Usage
 
